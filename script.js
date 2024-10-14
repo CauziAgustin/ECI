@@ -1,43 +1,33 @@
-// Seleccionar todos los elementos con la clase .feature
-const features = document.querySelectorAll('.feature');
+// Seleccionar todos los elementos con la clase .auspiciar-item para mostrar la información en el modal
+const items = document.querySelectorAll('.auspiciar-item');
 const modal = document.getElementById('modal');
 const modalTitle = document.getElementById('modal-title');
 const modalDescription = document.getElementById('modal-description');
 const closeModal = document.getElementById('close-modal');
 
-// Abrir modal y mostrar información con animación
-features.forEach(feature => {
-    feature.addEventListener('click', (event) => {
-        const title = feature.getAttribute('data-title');
-        const description = feature.getAttribute('data-description');
+// Mostrar modal al hacer clic en cada elemento de auspiciar-item
+items.forEach(item => {
+    item.addEventListener('click', () => {
+        const title = item.getAttribute('data-title');
+        const description = item.getAttribute('data-description');
 
         modalTitle.textContent = title;
         modalDescription.textContent = description;
 
-        // Configurar posición de origen de la animación
-        const rect = feature.getBoundingClientRect();
-        modal.style.transformOrigin = `${rect.left + rect.width / 2}px ${rect.top + rect.height / 2}px`;
-
-        modal.classList.add('show'); // Agregar clase para mostrar el modal con animación
-        modal.style.display = 'flex'; // Mostrar el modal
+        // Mostrar el modal con la clase de animación
+        modal.classList.add('show');
     });
 });
 
-// Cerrar modal al hacer clic en el botón de cierre
+// Cerrar el modal al hacer clic en el botón de cierre
 closeModal.addEventListener('click', () => {
     modal.classList.remove('show');
-    setTimeout(() => {
-        modal.style.display = 'none';
-    }, 500); // Espera el tiempo de la animación para ocultar el modal
 });
 
-// Cerrar modal al hacer clic fuera de él
+// Cerrar el modal al hacer clic fuera del contenido
 window.addEventListener('click', (event) => {
     if (event.target === modal) {
         modal.classList.remove('show');
-        setTimeout(() => {
-            modal.style.display = 'none';
-        }, 500); // Espera el tiempo de la animación para ocultar el modal
     }
 });
 
@@ -50,7 +40,7 @@ counters.forEach(counter => {
         const current = +counter.innerText;
 
         // Velocidad de incremento
-        const increment = target / 200; 
+        const increment = target / 200;
 
         if (current < target) {
             counter.innerText = Math.ceil(current + increment);
