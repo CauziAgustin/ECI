@@ -1,0 +1,362 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.header {
+    background-color: #1f2a44;
+    color: rgb(161, 227, 229);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    background-color: rgb(161, 227, 229);
+    color: #1f2a44;
+    padding: 10px;
+    text-align: center;
+    margin-right: 15px;
+    line-height: 1.2;
+}
+
+.logo h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.logo p {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.spacer {
+    width: 50px;
+}
+
+.tagline-container {
+    display: flex;
+    align-items: center;
+}
+
+.tagline-bar {
+    width: 2px;
+    height: 60px;
+    background-color: rgb(161, 227, 229);
+    margin-right: 15px;
+}
+
+.tagline-text p {
+    font-size: 1.2em;
+    margin: 0;
+    color: rgb(161, 227, 229);
+}
+
+/* Estilos para los títulos alineados a la izquierda */
+.section-title, .numbers-title {
+    font-size: 1.5em;
+    color: #1f2a44;
+    text-align: left;
+    margin-left: 10%;
+    padding-bottom: 20px;
+}
+
+/* Estilos para la sección de características (6x2) */
+.features {
+    text-align: center;
+    padding: 20px;
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.feature {
+    width: 120px;
+    text-align: center;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: scale(1.1);
+}
+
+.feature img {
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s ease;
+}
+
+/* Estilos para la sección de números (3x2) con barra lateral */
+.numbers {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+}
+
+.numbers-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: start;
+    padding: 0 10%;
+}
+
+.number {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.number-bar {
+    width: 2px;
+    height: 100%;
+    background-color: #00a7a7;
+}
+
+.number-content h3 {
+    font-size: 2em;
+    color: #00a7a7;
+    margin: 0;
+}
+
+.number-content p {
+    color: #1f2a44;
+    font-size: 1em;
+    margin: 0;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.modal.show {
+    animation: scale-up 0.5s ease forwards;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    transform-origin: center;
+}
+
+.modal h3 {
+    margin: 0;
+    color: #1f2a44;
+    font-size: 1.5em;
+}
+
+.modal p {
+    color: #333;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Animación para el modal */
+@keyframes scale-up {
+    from {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Estilos para la nueva sección "Trayectoria" y "El Departamento de Computación" */
+.about {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 10%;
+    background-color: #f4f4f9;
+    gap: 20px;
+}
+
+.about-item {
+    width: 45%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-item.highlighted {
+    background-color: #a1e3e5;
+}
+
+.about-title {
+    font-size: 1.2em;
+    color: #1f2a44;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.about-icon {
+    color: #00a7a7;
+    font-size: 1.2em;
+}
+
+.about p {
+    color: #333;
+    font-size: 1em;
+    margin: 0;
+}
+
+/* Estilos para la sección "SÉ PARTE DE LA ECI" */
+.participate {
+    background-color: #00a7a7;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.participate2{
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.participate-images {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    padding: 0 10%;
+}
+
+.participate-images img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.participate-text {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+.participate-text h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.text-divider {
+    width: 2px;
+    height: 30px;
+    background-color: #ffffff;
+    margin-right: 10px;
+}
+
+.participate-text p {
+    font-size: 1em;
+    margin: 0;
+    color: #ffffff;
+}
+
+
+
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #f4f4f9;
+    border-top: 3px solid #00a7a7;
+    color: #1f2a44;
+}
+
+.footer-logos {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.footer-logo {
+    height: 80px; /* Puedes ajustar esta altura según cómo se vea */
+    width: auto;
+}
+
+.footer-logo {
+    height: auto;
+    max-height: 80px; /* Ajusta según cómo se vea en el diseño general */
+}
+
+.uba-logo {
+    height: 350px;
+    width: 250px; /* Ajusta el ancho hasta que quede proporcionado */
+}
+
+.computacion-logo {
+    width: 200px; /* Mantén el ancho adecuado para que queden alineados */
+}
+
+
+.footer-divider {
+    width: 2px;
+    height: 80px;
+    background-color: black;
+    margin-right: 20px;
+}
+
+.footer-text {
+    max-width: 500px;
+    font-size: 0.9em;
+    line-height: 1.5;
+    text-align: left;
+    color: #333;
+}
+
+.footer-text p {
+    margin: 0;
+}
